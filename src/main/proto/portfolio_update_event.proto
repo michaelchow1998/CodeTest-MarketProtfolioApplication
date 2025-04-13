@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.michael.marketprotfoliosystem.protobuf;
+
+option java_package = "com.michael.marketprotfoliosystem.protobuf";
+option java_outer_classname = "PortfolioUpdateProto";
+
+message PortfolioUpdateEvent {
+  map<string, double> market_prices = 1;
+  map<string, PortfolioItem> portfolio_items = 2;
+  double total_value = 3;
+}
+
+message PortfolioItem {
+  string symbol = 1;
+  double price = 2;
+  double qty = 3;
+  double value = 4;
+}
